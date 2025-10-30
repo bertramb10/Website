@@ -237,6 +237,7 @@ interface Experience {
   company: string;
   period: string;
   achievements: string[];
+  responsibilities: string[];
 }
 
 // Generate cover letter
