@@ -83,7 +83,7 @@ async function notifyHighMatchJobs(email: string, jobs: Job[]) {
 }
 
 // Main auto-check handler
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     console.log('\n🔍 Auto-checking for new jobs...');
 
@@ -92,7 +92,7 @@ export async function GET(request: NextRequest) {
     const location = 'københavn';
 
     // Fetch jobs for each keyword
-    let allNewJobs: Job[] = [];
+    const allNewJobs: Job[] = [];
 
     for (const keyword of searchKeywords) {
       console.log(`Searching for: "${keyword}"`);

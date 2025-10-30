@@ -36,8 +36,21 @@ function quickExtractKeywords(text: string) {
   return { technical: [...new Set(foundTechnical)] };
 }
 
+interface Keywords {
+  technical: string[];
+}
+
+interface ResumeData {
+  skills: {
+    languages: string[];
+    frontend: string[];
+    backend: string[];
+    tools: string[];
+  };
+}
+
 // Calculate match score
-function calculateMatchScore(keywords: any, resumeData: any): number {
+function calculateMatchScore(keywords: Keywords, resumeData: ResumeData): number {
   const allResumeSkills = [
     ...resumeData.skills.languages,
     ...resumeData.skills.frontend,
@@ -251,14 +264,14 @@ async function parseITJobBankRSS(keywords: string, location?: string) {
 
     console.log(`Found ${jobs.length} jobs from IT-jobbank for "${keywords}"`);
     return jobs;
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('IT-jobbank RSS parse error:', error);
     return [];
   }
 }
 
 // Generate mock jobs for demonstration (until we get proper scraping working)
-function generateMockJobs(keywords: string) {
+function generateMockJobs(_keywords: string) {
   const mockJobs = [
     {
       id: 'mock-1',
@@ -321,9 +334,9 @@ function generateMockJobs(keywords: string) {
 }
 
 // Simple scraper for JobIndex.dk
-async function scrapeJobIndex(keywords: string) {
+async function scrapeJobIndex(_keywords: string) {
   try {
-    const searchUrl = `https://www.jobindex.dk/jobsoegning?q=${encodeURIComponent(keywords)}`;
+    const searchUrl = `https://www.jobindex.dk/jobsoegning?q=${encodeURIComponent(_keywords)}`;
     const response = await fetch(searchUrl, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'

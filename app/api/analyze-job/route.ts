@@ -198,8 +198,22 @@ function extractRequirements(text: string): string[] {
   return uniqueRequirements.slice(0, 12); // Top 12 requirements
 }
 
+interface Keywords {
+  technical: string[];
+  soft: string[];
+}
+
+interface ResumeData {
+  skills: {
+    languages: string[];
+    frontend: string[];
+    backend: string[];
+    tools: string[];
+  };
+}
+
 // Calculate match score
-function calculateMatchScore(keywords: any, resumeData: any): number {
+function calculateMatchScore(keywords: Keywords, resumeData: ResumeData): number {
   const allResumeSkills = [
     ...resumeData.skills.languages,
     ...resumeData.skills.frontend,
@@ -218,7 +232,7 @@ function calculateMatchScore(keywords: any, resumeData: any): number {
 }
 
 // Generate cover letter
-function generateCoverLetter(jobText: string, keywords: any, resumeData: any): string {
+function generateCoverLetter(jobText: string, keywords: Keywords, resumeData: ResumeData & { personalInfo: { name: string }; summary: string; experience: unknown[]; education: unknown[] }): string {
   const { personalInfo, summary, experience, education, skills } = resumeData;
 
   // Extract company name (improved detection for Danish and English)
@@ -318,7 +332,7 @@ async function fetchJobPosting(url: string): Promise<string> {
       .trim();
 
     return text;
-  } catch (error) {
+  } catch {
     throw new Error('Failed to fetch job posting from URL');
   }
 }

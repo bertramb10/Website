@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
 
     // Update custom profile keywords if specified
     if (body.customKeywords) {
-      const customProfile = data.profiles.find((p: any) => p.id === 'custom');
+      const customProfile = data.profiles.find((p: { id: string }) => p.id === 'custom');
       if (customProfile) {
         customProfile.keywords = body.customKeywords;
       }
@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
     const dbPath = path.join(process.cwd(), 'data', 'jobs-database.json');
     const dbData = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
 
-    const activeProfile = data.profiles.find((p: any) => p.id === data.activeProfile);
+    const activeProfile = data.profiles.find((p: { id: string }) => p.id === data.activeProfile);
     if (activeProfile) {
       dbData.searchKeywords = activeProfile.keywords;
       dbData.matchThreshold = activeProfile.matchThreshold;
