@@ -240,8 +240,27 @@ interface Experience {
   responsibilities: string[];
 }
 
+interface Education {
+  institution: string;
+  degree: string;
+  period: string;
+}
+
+interface PersonalInfo {
+  name: string;
+  email?: string;
+  phone?: string;
+}
+
+interface FullResumeData extends ResumeData {
+  personalInfo: PersonalInfo;
+  summary: string;
+  experience: Experience[];
+  education: Education[];
+}
+
 // Generate cover letter
-function generateCoverLetter(jobText: string, keywords: Keywords, resumeData: ResumeData & { personalInfo: { name: string }; summary: string; experience: Experience[]; education: unknown[] }): string {
+function generateCoverLetter(jobText: string, keywords: Keywords, resumeData: FullResumeData): string {
   const { personalInfo, summary, experience, education, skills } = resumeData;
 
   // Extract company name (improved detection for Danish and English)
