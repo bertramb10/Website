@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ReactElement } from 'react';
 import Link from 'next/link';
 
 interface Keywords {
@@ -22,11 +22,11 @@ function highlightKeywords(text: string, keywords: Keywords) {
   let globalCounter = 0; // Unique key counter
 
   return lines.map((line, lineIdx) => {
-    let parts: (string | JSX.Element)[] = [line];
+    let parts: (string | ReactElement)[] = [line];
 
     // For each keyword, split and highlight
     allKeywords.forEach((keyword: string) => {
-      const newParts: (string | JSX.Element)[] = [];
+      const newParts: (string | ReactElement)[] = [];
       parts.forEach((part) => {
         if (typeof part === 'string') {
           // Case-insensitive split
