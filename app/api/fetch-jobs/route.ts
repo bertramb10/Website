@@ -281,7 +281,7 @@ function generateMockJobs() {
       description: `Vi søger en dygtig software udvikler med erfaring i .NET og C#. Du kommer til at arbejde med moderne cloud-baserede løsninger i Azure, og du får mulighed for at arbejde med spændende projekter i et agilt team. Vi forventer erfaring med C#, .NET Core, Azure, SQL, og gerne TypeScript. Vi tilbyder en spændende arbejdsplads med gode udviklingsmuligheder.`,
       url: 'https://www.jobindex.dk',
       postedDate: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
-      salary: '45000 - 55000 DKK',
+      salary: null,
       contractType: 'Fastansættelse'
     },
     {
@@ -292,7 +292,7 @@ function generateMockJobs() {
       description: `Er du skarp til React og TypeScript? Vi søger en frontend developer til vores voksende team. Du kommer til at arbejde med moderne webudvikling, responsive design, og brugervenlige interfaces. Erfaring med React, TypeScript, HTML, CSS, og gerne Next.js er et must. Vi tilbyder flexibilitet, gode kolleger, og spændende projekter.`,
       url: 'https://www.jobindex.dk',
       postedDate: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
-      salary: '42000 - 52000 DKK',
+      salary: null,
       contractType: 'Fastansættelse'
     },
     {
@@ -314,7 +314,7 @@ function generateMockJobs() {
       description: `Søger erfaren DevOps engineer til at arbejde med cloud infrastructure, CI/CD pipelines, og containerization. Du skal have erfaring med Docker, Kubernetes, Azure DevOps, Terraform, og Infrastructure as Code. Vi tilbyder et teknisk udfordrende miljø hvor du kan arbejde med cutting-edge teknologier.`,
       url: 'https://www.jobindex.dk',
       postedDate: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(),
-      salary: '50000 - 65000 DKK',
+      salary: null,
       contractType: 'Fastansættelse'
     },
     {
@@ -325,7 +325,7 @@ function generateMockJobs() {
       description: `Ny-uddannet eller junior udvikler søges til vores udviklingsteam. Du får mulighed for at lære fra erfarne udviklere og arbejde med C#, .NET, Azure, og SQL. Vi lægger vægt på læring og udvikling, og du får god onboarding og mentoring. Perfekt for dig der lige er færdiguddannet som IT-Teknolog eller Datamatiker.`,
       url: 'https://www.jobindex.dk',
       postedDate: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(),
-      salary: '38000 - 45000 DKK',
+      salary: null,
       contractType: 'Fastansættelse'
     }
   ];
