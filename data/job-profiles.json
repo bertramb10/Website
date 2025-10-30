@@ -1,0 +1,245 @@
+{
+  "profiles": [
+    {
+      "id": "it-developer",
+      "name": "IT Udvikler",
+      "description": "Software udvikling, programmering, web udvikling",
+      "icon": "💻",
+      "keywords": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "c#",
+        ".net",
+        "react",
+        "angular",
+        "vue",
+        "node.js",
+        "sql",
+        "mongodb",
+        "azure",
+        "aws",
+        "docker",
+        "kubernetes",
+        "git",
+        "scrum",
+        "agile",
+        "html",
+        "css",
+        "rest",
+        "api",
+        "udvikler",
+        "programmer",
+        "software engineer"
+      ],
+      "locations": [
+        "københavn",
+        "storkøbenhavn"
+      ],
+      "matchThreshold": 80
+    },
+    {
+      "id": "frontend-developer",
+      "name": "Frontend Udvikler",
+      "description": "Frontend, UI/UX, web design",
+      "icon": "🎨",
+      "keywords": [
+        "react",
+        "angular",
+        "vue",
+        "javascript",
+        "typescript",
+        "html",
+        "css",
+        "sass",
+        "tailwind",
+        "bootstrap",
+        "next.js",
+        "nuxt",
+        "svelte",
+        "webpack",
+        "frontend",
+        "ui",
+        "ux",
+        "responsive design",
+        "figma",
+        "adobe xd"
+      ],
+      "locations": [
+        "københavn",
+        "storkøbenhavn"
+      ],
+      "matchThreshold": 75
+    },
+    {
+      "id": "backend-developer",
+      "name": "Backend Udvikler",
+      "description": "Backend, API, databaser, server-side",
+      "icon": "⚙️",
+      "keywords": [
+        "node.js",
+        ".net",
+        "c#",
+        "python",
+        "java",
+        "spring",
+        "django",
+        "flask",
+        "express",
+        "sql",
+        "postgresql",
+        "mongodb",
+        "redis",
+        "api",
+        "rest",
+        "graphql",
+        "microservices",
+        "backend",
+        "server",
+        "database"
+      ],
+      "locations": [
+        "københavn",
+        "storkøbenhavn"
+      ],
+      "matchThreshold": 80
+    },
+    {
+      "id": "devops",
+      "name": "DevOps / Cloud",
+      "description": "DevOps, cloud, infrastructure, CI/CD",
+      "icon": "☁️",
+      "keywords": [
+        "devops",
+        "azure",
+        "aws",
+        "gcp",
+        "docker",
+        "kubernetes",
+        "terraform",
+        "ansible",
+        "jenkins",
+        "gitlab",
+        "github actions",
+        "ci/cd",
+        "infrastructure",
+        "cloud",
+        "linux",
+        "bash",
+        "python",
+        "monitoring",
+        "prometheus",
+        "grafana"
+      ],
+      "locations": [
+        "københavn",
+        "storkøbenhavn"
+      ],
+      "matchThreshold": 75
+    },
+    {
+      "id": "data-science",
+      "name": "Data Science / ML",
+      "description": "Data science, machine learning, AI, analytics",
+      "icon": "📊",
+      "keywords": [
+        "python",
+        "r",
+        "machine learning",
+        "deep learning",
+        "tensorflow",
+        "pytorch",
+        "scikit-learn",
+        "pandas",
+        "numpy",
+        "data science",
+        "data analyst",
+        "sql",
+        "statistics",
+        "visualization",
+        "tableau",
+        "power bi",
+        "ai",
+        "nlp",
+        "computer vision"
+      ],
+      "locations": [
+        "københavn",
+        "danmark"
+      ],
+      "matchThreshold": 70
+    },
+    {
+      "id": "restaurant",
+      "name": "Restaurant & Service",
+      "description": "Tjener, kok, bartender, hotel service",
+      "icon": "🍽️",
+      "keywords": [
+        "tjener",
+        "kok",
+        "bartender",
+        "service",
+        "restaurant",
+        "café",
+        "hotel",
+        "køkken",
+        "gastronomi",
+        "waiter",
+        "chef",
+        "cook",
+        "barista",
+        "hospitality",
+        "servering",
+        "mad",
+        "drikke",
+        "kundeservice"
+      ],
+      "locations": [
+        "københavn",
+        "storkøbenhavn"
+      ],
+      "matchThreshold": 60
+    },
+    {
+      "id": "retail",
+      "name": "Detailhandel",
+      "description": "Butiksmedarbejder, sælger, kasseassistent",
+      "icon": "🛍️",
+      "keywords": [
+        "butiksmedarbejder",
+        "sælger",
+        "salg",
+        "butik",
+        "retail",
+        "kundeservice",
+        "kasse",
+        "lager",
+        "varehus",
+        "tøj",
+        "mode",
+        "sales",
+        "shop",
+        "store",
+        "medarbejder"
+      ],
+      "locations": [
+        "københavn",
+        "storkøbenhavn"
+      ],
+      "matchThreshold": 50
+    },
+    {
+      "id": "custom",
+      "name": "Tilpasset Profil",
+      "description": "Vælg selv keywords og indstillinger",
+      "icon": "✏️",
+      "keywords": [],
+      "locations": [
+        "københavn"
+      ],
+      "matchThreshold": 70
+    }
+  ],
+  "activeProfile": "it-developer"
+}

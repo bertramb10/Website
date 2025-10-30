@@ -1,0 +1,127 @@
+{
+  "personalInfo": {
+    "name": "Bertram Bregnhøj Petersen",
+    "email": "bertramb10@yahoo.dk",
+    "phone": "+45 51927987",
+    "location": "Hørkær 7F, 4.1, 2730 Herlev, Denmark",
+    "github": "https://github.com/bertramb10",
+    "linkedin": "https://www.linkedin.com/in/bertram-alexander-bregnh%C3%B8j-petersen-2692172a6/"
+  },
+  "summary": "I am a recently graduated IT-Technologist with practical experience in C#/.NET development, SQL databases, and Azure-based environments. During my internship and academic projects, I worked on backend solutions with a strong focus on usability and data handling, ensuring functionality aligned with real world business needs. I thrive in agile teams and bring hands-on experience with SCRUM, Jira, and Confluence. I am motivated by building robust cloud-based solutions that make a tangible difference, and I am eager to deepen my skills in microservices, DevOps practices, and modern cloud tools.",
+  "skills": {
+    "languages": ["C#", ".NET", "Python", "JavaScript", "TypeScript", "C++"],
+    "frontend": ["TypeScript", "HTML", "CSS", "Responsive Web Design", "React"],
+    "backend": ["REST APIs", "SQL", "C#", ".NET"],
+    "tools": ["Azure", "Jira", "Confluence", "Git"],
+    "other": ["SCRUM", "Agile Processes", "Testing & Quality Assurance", "DevOps", "Usability Focus", "Team Collaboration", "Documentation"]
+  },
+  "experience": [
+    {
+      "company": "FOA",
+      "position": "Intern",
+      "location": "Vesterport, Denmark",
+      "startDate": "2025-02",
+      "endDate": "2025-05",
+      "current": false,
+      "responsibilities": [
+        "Developed a document generation tool in C#/.NET with a strong emphasis on usability and end-user experience; frontend built in TypeScript",
+        "Participated in agile workflows with SCRUM, including sprint planning, daily stand-ups, and backlog grooming in Jira",
+        "Created documentation in Confluence and collaborated closely with developers and consultants to deliver user-oriented, practical solutions",
+        "Focused strongly on usability and frontend clarity, ensuring the solution supported consultants with intuitive workflows"
+      ],
+      "achievements": [
+        "Gained insight into professional DevOps practices and structured team collaboration",
+        "Successfully delivered practical solutions that supported consultants with clear and usable interfaces"
+      ]
+    },
+    {
+      "company": "The Burger Concept",
+      "position": "Team Leader",
+      "location": "Ballerup, Denmark",
+      "startDate": "2022-11",
+      "endDate": "2023-06",
+      "current": false,
+      "responsibilities": [
+        "Managed kitchen operations, trained new employees, and ensured high quality standards"
+      ],
+      "achievements": [
+        "Developed leadership, responsibility, and collaboration skills in a fast-paced environment"
+      ]
+    },
+    {
+      "company": "Salling Group",
+      "position": "Service Assistant (Driver)",
+      "location": "Ishøj, Denmark",
+      "startDate": "2021-01",
+      "endDate": "2022-09",
+      "current": false,
+      "responsibilities": [
+        "Coordinated logistics and vehicle preparation",
+        "Ensured customer satisfaction and timely deliveries"
+      ],
+      "achievements": []
+    },
+    {
+      "company": "Rema1000",
+      "position": "Service Assistant",
+      "location": "Skovlunde, Denmark",
+      "startDate": "2018-11",
+      "endDate": "2020-05",
+      "current": false,
+      "responsibilities": [
+        "Provided customer service and cashier assistance"
+      ],
+      "achievements": []
+    }
+  ],
+  "education": [
+    {
+      "institution": "Københavns Erhvervsakademi (KEA)",
+      "degree": "IT-Teknolog (Academy Profession Degree in IT Technology)",
+      "location": "Nørrebro, Denmark",
+      "startDate": "2023-08",
+      "endDate": "2025-06",
+      "current": false,
+      "description": "Software development in C#, Python, JavaScript, C++. Frontend projects included building responsive dashboards and webapps with login and data visualization, tailored to specific user needs. SQL databases: modeling, setup, and query handling across multiple projects. Azure and cloud-based environments, networking, and data security. Agile teamwork using SCRUM methodology, Jira, and Confluence."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Document Generation Tool",
+      "description": "C#/.NET application for generating documents with focus on usability and user experience",
+      "technologies": ["C#", ".NET", "TypeScript", "Azure"],
+      "link": ""
+    },
+    {
+      "name": "Recipe Finder",
+      "description": "A web application to find recipes based on available ingredients",
+      "technologies": ["React", "JavaScript", "API Integration"],
+      "link": "https://github.com/bertramb10/recipe-finder"
+    },
+    {
+      "name": "Cocktail Finder",
+      "description": "Application to discover cocktail recipes and mixing instructions",
+      "technologies": ["React", "JavaScript", "API Integration"],
+      "link": "https://github.com/bertramb10/cocktail-finder"
+    },
+    {
+      "name": "Smart Job Application System",
+      "description": "Intelligent job search and application automation tool with AI-powered cover letter generation",
+      "technologies": ["Next.js", "TypeScript", "React", "Keyword Extraction"],
+      "link": "https://github.com/bertramb10",
+      "status": "In Development"
+    }
+  ],
+  "languages": [
+    {
+      "language": "Danish",
+      "proficiency": "Native"
+    },
+    {
+      "language": "English",
+      "proficiency": "Fluent"
+    }
+  ],
+  "certifications": [],
+  "interests": ["Web Development", "Cloud Solutions", "DevOps", "Microservices", "Problem Solving", "Continuous Learning"]
+}
