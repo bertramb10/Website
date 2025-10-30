@@ -333,60 +333,7 @@ function generateMockJobs(_keywords: string) {
   return mockJobs;
 }
 
-// Simple scraper for JobIndex.dk
-async function scrapeJobIndex(_keywords: string) {
-  try {
-    const searchUrl = `https://www.jobindex.dk/jobsoegning?q=${encodeURIComponent(_keywords)}`;
-    const response = await fetch(searchUrl, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-      }
-    });
-
-    const html = await response.text();
-
-    // Improved regex patterns for JobIndex.dk
-    const jobs = [];
-
-    // Find all job article blocks
-    const articleRegex = /<article[^>]*class="[^"]*jix_robotjob[^"]*"[^>]*>([\s\S]*?)<\/article>/g;
-    let articleMatch;
-    let id = 1;
-
-    while ((articleMatch = articleRegex.exec(html)) !== null && jobs.length < 20) {
-      const articleHtml = articleMatch[1];
-
-      // Extract job details with more flexible patterns
-      const titleMatch = articleHtml.match(/<h4[^>]*>\s*<a[^>]*>(.*?)<\/a>\s*<\/h4>/s);
-      const linkMatch = articleHtml.match(/<a[^>]*href="([^"]*)"[^>]*class="[^"]*jix_robotjob__link[^"]*"/);
-      const companyMatch = articleHtml.match(/class="[^"]*jobsearch-jtitle-company-name[^"]*"[^>]*>([^<]*)</);
-      const locationMatch = articleHtml.match(/class="[^"]*PaidJob-inner-job-label[^"]*"[^>]*>([^<]*)</);
-
-      if (titleMatch && linkMatch) {
-        const title = titleMatch[1].replace(/<[^>]*>/g, '').trim();
-        const url = linkMatch[1].startsWith('http') ? linkMatch[1] : `https://www.jobindex.dk${linkMatch[1]}`;
-
-        jobs.push({
-          id: `jobindex-${id++}`,
-          title: title || 'IT Stilling',
-          company: companyMatch ? companyMatch[1].trim() : 'Se opslag',
-          location: locationMatch ? locationMatch[1].trim() : 'Danmark',
-          description: `${title} - Klik for at se fuldt job opslag på JobIndex.dk`,
-          url: url,
-          postedDate: new Date().toISOString(),
-          salary: null,
-          contractType: 'Se opslag for detaljer',
-        });
-      }
-    }
-
-    console.log(`Found ${jobs.length} jobs for "${keywords}"`);
-    return jobs;
-  } catch (error) {
-    console.error('JobIndex scrape error:', error);
-    return [];
-  }
-}
+// Note: scrapeJobIndex was removed - we use RSS feeds instead (parseJobIndexRSS)
 
 export async function POST(request: NextRequest) {
   try {

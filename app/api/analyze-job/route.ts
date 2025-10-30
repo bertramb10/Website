@@ -209,6 +209,7 @@ interface ResumeData {
     frontend: string[];
     backend: string[];
     tools: string[];
+    other?: string[];
   };
 }
 
@@ -257,7 +258,7 @@ function generateCoverLetter(jobText: string, keywords: Keywords, resumeData: Re
     ...skills.frontend,
     ...skills.backend,
     ...skills.tools,
-    ...skills.other
+    ...(skills.other || [])
   ].map((s: string) => s.toLowerCase());
 
   // Match job keywords with YOUR actual skills
