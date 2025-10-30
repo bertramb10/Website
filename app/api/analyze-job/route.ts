@@ -232,8 +232,15 @@ function calculateMatchScore(keywords: Keywords, resumeData: ResumeData): number
   return Math.round(score);
 }
 
+interface Experience {
+  position: string;
+  company: string;
+  period: string;
+  achievements: string[];
+}
+
 // Generate cover letter
-function generateCoverLetter(jobText: string, keywords: Keywords, resumeData: ResumeData & { personalInfo: { name: string }; summary: string; experience: unknown[]; education: unknown[] }): string {
+function generateCoverLetter(jobText: string, keywords: Keywords, resumeData: ResumeData & { personalInfo: { name: string }; summary: string; experience: Experience[]; education: unknown[] }): string {
   const { personalInfo, summary, experience, education, skills } = resumeData;
 
   // Extract company name (improved detection for Danish and English)

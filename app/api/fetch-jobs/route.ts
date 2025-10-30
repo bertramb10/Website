@@ -271,7 +271,7 @@ async function parseITJobBankRSS(keywords: string, location?: string) {
 }
 
 // Generate mock jobs for demonstration (until we get proper scraping working)
-function generateMockJobs(_keywords: string) {
+function generateMockJobs() {
   const mockJobs = [
     {
       id: 'mock-1',
@@ -409,7 +409,7 @@ export async function POST(request: NextRequest) {
     // Fallback to mock data if all sources fail
     if (filteredJobs.length === 0) {
       console.log('All RSS feeds failed or no jobs match location, using mock data for demonstration');
-      jobs = generateMockJobs(keywords);
+      jobs = generateMockJobs();
     } else {
       jobs = filteredJobs;
     }
