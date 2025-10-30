@@ -50,8 +50,8 @@ export default function JobsPage() {
 
       setJobs(data.jobs);
       setTotalCount(data.totalCount);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'En fejl opstod');
     } finally {
       setLoading(false);
     }
@@ -93,13 +93,6 @@ export default function JobsPage() {
     if (diffDays < 7) return `${diffDays} dage siden`;
     if (diffDays < 30) return `${Math.floor(diffDays / 7)} uger siden`;
     return `${Math.floor(diffDays / 30)} måneder siden`;
-  };
-
-  const getMatchColor = (score?: number) => {
-    if (!score) return 'text-gray-500';
-    if (score >= 80) return 'text-green-600 dark:text-green-400';
-    if (score >= 50) return 'text-yellow-600 dark:text-yellow-400';
-    return 'text-red-600 dark:text-red-400';
   };
 
   const getMatchBadge = (score?: number) => {

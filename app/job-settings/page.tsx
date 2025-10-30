@@ -81,7 +81,7 @@ export default function JobSettings() {
         body: JSON.stringify({ activeProfile: profileId }),
       });
       setMessage(`✅ Skiftede til profil: ${profile.name}`);
-    } catch (error) {
+    } catch {
       setMessage('❌ Kunne ikke skifte profil');
     }
   };
@@ -426,7 +426,7 @@ export default function JobSettings() {
 EMAIL_PASSWORD=din-app-password`}
           </pre>
           <p className="text-sm mt-2">
-            Gmail brugere: Opret et "App Password" på{' '}
+            Gmail brugere: Opret et &quot;App Password&quot; på{' '}
             <a
               href="https://myaccount.google.com/apppasswords"
               target="_blank"

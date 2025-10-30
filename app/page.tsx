@@ -63,7 +63,7 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">About Me</h2>
           <div className="space-y-4 text-slate-600 dark:text-slate-300 text-lg">
             <p>
-              I'm a software developer with experience across multiple programming languages and frameworks.
+              I&apos;m a software developer with experience across multiple programming languages and frameworks.
               Currently seeking opportunities to contribute to innovative projects and collaborate with talented teams.
             </p>
             <p>
@@ -174,8 +174,8 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Get In Touch</h2>
           <p className="text-lg text-slate-600 dark:text-slate-300 mb-8">
-            I'm currently looking for new opportunities. Whether you have a question or just want to say hi,
-            I'll try my best to get back to you!
+            I&apos;m currently looking for new opportunities. Whether you have a question or just want to say hi,
+            I&apos;ll try my best to get back to you!
           </p>
           <div className="flex gap-4 justify-center flex-wrap mb-8">
             <a

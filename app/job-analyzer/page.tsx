@@ -3,8 +3,13 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+interface Keywords {
+  technical?: string[];
+  soft?: string[];
+}
+
 // Helper function to highlight keywords in text
-function highlightKeywords(text: string, keywords: any) {
+function highlightKeywords(text: string, keywords: Keywords) {
   if (!keywords || !text) return text;
 
   const allKeywords = [
@@ -17,18 +22,18 @@ function highlightKeywords(text: string, keywords: any) {
   let globalCounter = 0; // Unique key counter
 
   return lines.map((line, lineIdx) => {
-    let parts: any[] = [line];
+    let parts: (string | JSX.Element)[] = [line];
 
     // For each keyword, split and highlight
     allKeywords.forEach((keyword: string) => {
-      const newParts: any[] = [];
+      const newParts: (string | JSX.Element)[] = [];
       parts.forEach((part) => {
         if (typeof part === 'string') {
           // Case-insensitive split
           const regex = new RegExp(`(\\b${keyword}\\b)`, 'gi');
           const splitParts = part.split(regex);
 
-          splitParts.forEach((splitPart, idx) => {
+          splitParts.forEach((splitPart) => {
             if (regex.test(splitPart)) {
               const isTechnical = keywords.technical?.includes(keyword);
               newParts.push(
@@ -63,12 +68,19 @@ function highlightKeywords(text: string, keywords: any) {
   });
 }
 
+interface AnalysisResult {
+  keywords: Keywords;
+  requirements: string[];
+  matchScore: number;
+  coverLetter: string;
+}
+
 export default function JobAnalyzer() {
   const [jobUrl, setJobUrl] = useState('');
   const [jobText, setJobText] = useState('');
   const [inputMode, setInputMode] = useState<'url' | 'text'>('url');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
-  const [analysisResult, setAnalysisResult] = useState<any>(null);
+  const [analysisResult, setAnalysisResult] = useState<AnalysisResult | null>(null);
 
   // Check for prefilled data from URL params
   useEffect(() => {
