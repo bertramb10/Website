@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import cron from 'node-cron';
+import * as cron from 'node-cron';
 
 let cronJobStarted = false;
 let cronTask: cron.ScheduledTask | null = null;
