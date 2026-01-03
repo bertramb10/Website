@@ -17,6 +17,8 @@ interface Hero {
   frontline: number;
   bkbCancel: number;
   roles: string[];
+  counters: string[];
+  counteredBy: string[];
 }
 
 interface RecommendedHero extends Hero {
@@ -154,6 +156,32 @@ export default function DotaPicker() {
         if (hero.laneDominance >= 3) {
           score += 5;
           reasons.push(`Dominates lane (${hero.laneDominance}/3)`);
+        }
+
+        // Counter matchups - VERY IMPORTANT
+        const countersEnemies = enemyPicks.filter(enemyName =>
+          hero.counters?.includes(enemyName)
+        );
+        const counteredByEnemies = enemyPicks.filter(enemyName =>
+          hero.counteredBy?.includes(enemyName)
+        );
+
+        // Bonus points for each enemy this hero counters
+        if (countersEnemies.length > 0) {
+          const counterBonus = countersEnemies.length * 15;
+          score += counterBonus;
+          countersEnemies.forEach(enemy => {
+            reasons.push(`✓ Counters ${enemy}`);
+          });
+        }
+
+        // Penalty for being countered by enemies
+        if (counteredByEnemies.length > 0) {
+          const counterPenalty = counteredByEnemies.length * 12;
+          score -= counterPenalty;
+          counteredByEnemies.forEach(enemy => {
+            reasons.push(`✗ Countered by ${enemy}`);
+          });
         }
 
         return { ...hero, score, reasons };

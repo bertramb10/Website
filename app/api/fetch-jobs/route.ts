@@ -105,7 +105,7 @@ async function parseJobIndexRSS(keywords: string, location?: string) {
     let match;
     let id = 1;
 
-    while ((match = itemRegex.exec(xmlText)) !== null && jobs.length < 20) {
+    while ((match = itemRegex.exec(xmlText)) !== null && jobs.length < 100) {
       const itemXml = match[1];
 
       // Extract fields from XML
@@ -205,7 +205,7 @@ async function parseITJobBankRSS(keywords: string, location?: string) {
     let match;
     let id = 1;
 
-    while ((match = itemRegex.exec(xmlText)) !== null && jobs.length < 25) {
+    while ((match = itemRegex.exec(xmlText)) !== null && jobs.length < 100) {
       const itemXml = match[1];
 
       const title = itemXml.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>|<title>(.*?)<\/title>/)?.[1] || itemXml.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>|<title>(.*?)<\/title>/)?.[2] || '';
