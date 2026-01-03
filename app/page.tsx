@@ -22,18 +22,25 @@ export default function Home() {
       color: 'violet'
     },
     {
-      title: 'Job System',
+      title: 'Smart Job Post Finding System',
       description: 'Intelligent job-søgnings og analyse værktøj der automatisk finder relevante stillinger, ekstraherer nøgleord og hjælper med at målrette ansøgninger.',
       tags: ['Next.js', 'TypeScript', 'API Integration', 'Automation'],
       link: '/jobs',
       color: 'blue'
     },
     {
-      title: 'FoodPrint',
+      title: 'Food/Drink Program',
       description: 'Bæredygtig mad-tracking app der hjælper brugere med at forstå og reducere deres klimaaftryk gennem deres kostvalg og indkøbsvaner.',
       tags: ['React', 'Node.js', 'Database', 'Analytics'],
       link: '#',
       color: 'emerald'
+    },
+    {
+      title: 'Dota 2 Hero Picker',
+      description: 'Intelligent hero-anbefalingssystem der analyserer team-komposition og modstandernes picks for at foreslå optimale hero-valg baseret på synergier og counters.',
+      tags: ['Next.js', 'TypeScript', 'Algorithm', 'Game Analytics'],
+      link: '/dota-picker',
+      color: 'red'
     }
   ];
 
@@ -66,20 +73,37 @@ export default function Home() {
       `}</style>
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50">
+      <nav className="fixed top-0 w-full z-50 bg-slate-950">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            {/* Logo */}
+            {/* Logo - Stylized BB */}
             <a href="#" className="relative group">
-              <div className="px-4 py-2 bg-gradient-to-r from-violet-600 to-blue-600 rounded-lg font-bold text-lg transition-transform group-hover:scale-105">
-                BB
+              <div className="relative flex items-center">
+                {/* Logo container with gradient border */}
+                <div className="relative">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-violet-600 to-blue-600 rounded-xl blur-sm opacity-75 group-hover:opacity-100 transition-opacity" />
+                  <div className="relative bg-slate-950 px-3 py-1.5 rounded-xl border border-slate-800">
+                    <div className="flex items-center gap-0.5">
+                      {/* First B - stylized */}
+                      <span className="text-2xl font-black bg-gradient-to-br from-violet-400 to-violet-600 bg-clip-text text-transparent" style={{ fontFamily: 'system-ui' }}>
+                        B
+                      </span>
+                      {/* Second B - slightly offset */}
+                      <span className="text-2xl font-black bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-transparent -ml-1" style={{ fontFamily: 'system-ui' }}>
+                        B
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                {/* Dot accent */}
+                <div className="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-gradient-to-r from-violet-500 to-blue-500 rounded-full" />
               </div>
             </a>
 
             {/* Contact Button */}
             <a
               href="#contact"
-              className="px-5 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg font-medium hover:bg-white/20 transition-all"
+              className="px-5 py-2 bg-slate-800 border border-slate-700 rounded-lg font-medium hover:bg-slate-700 hover:border-violet-500/50 transition-all"
             >
               Kontakt
             </a>
@@ -87,7 +111,7 @@ export default function Home() {
         </div>
 
         {/* Wavy line under navbar */}
-        <div className="relative h-8 overflow-hidden">
+        <div className="relative h-8 overflow-hidden bg-slate-950">
           <svg
             className="absolute w-[200%] h-full animate-wave"
             viewBox="0 0 1440 40"
@@ -246,6 +270,7 @@ export default function Home() {
                 <div className={`absolute -inset-1 bg-gradient-to-b ${
                   project.color === 'violet' ? 'from-violet-600/50 to-violet-600/0' :
                   project.color === 'blue' ? 'from-blue-600/50 to-blue-600/0' :
+                  project.color === 'red' ? 'from-red-600/50 to-red-600/0' :
                   'from-emerald-600/50 to-emerald-600/0'
                 } rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
@@ -255,6 +280,7 @@ export default function Home() {
                   <div className={`absolute top-0 left-[15%] right-[15%] h-1 ${
                     project.color === 'violet' ? 'bg-gradient-to-r from-violet-600 to-purple-600' :
                     project.color === 'blue' ? 'bg-gradient-to-r from-blue-600 to-cyan-600' :
+                    project.color === 'red' ? 'bg-gradient-to-r from-red-600 to-orange-600' :
                     'bg-gradient-to-r from-emerald-600 to-teal-600'
                   } rounded-b-full`} />
 
@@ -262,6 +288,7 @@ export default function Home() {
                   <h3 className={`text-2xl font-bold mb-4 ${
                     project.color === 'violet' ? 'text-violet-400' :
                     project.color === 'blue' ? 'text-blue-400' :
+                    project.color === 'red' ? 'text-red-400' :
                     'text-emerald-400'
                   }`}>
                     {project.title}
@@ -280,6 +307,7 @@ export default function Home() {
                         className={`px-2 py-1 rounded text-xs ${
                           project.color === 'violet' ? 'bg-violet-900/50 text-violet-300' :
                           project.color === 'blue' ? 'bg-blue-900/50 text-blue-300' :
+                          project.color === 'red' ? 'bg-red-900/50 text-red-300' :
                           'bg-emerald-900/50 text-emerald-300'
                         }`}
                       >
@@ -296,6 +324,7 @@ export default function Home() {
                     className={`inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all ${
                       project.color === 'violet' ? 'bg-violet-600 hover:bg-violet-700' :
                       project.color === 'blue' ? 'bg-blue-600 hover:bg-blue-700' :
+                      project.color === 'red' ? 'bg-red-600 hover:bg-red-700' :
                       'bg-emerald-600 hover:bg-emerald-700'
                     } text-white`}
                   >
