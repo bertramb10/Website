@@ -96,9 +96,14 @@ export default function Home() {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
+        @keyframes rotate-slow {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
         .animate-float { animation: float 6s ease-in-out infinite; }
         .animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
         .animate-wave { animation: wave 20s linear infinite; }
+        .animate-rotate-slow { animation: rotate-slow 30s linear infinite; }
         .project-card {
           clip-path: polygon(15% 0%, 85% 0%, 100% 8%, 100% 100%, 0% 100%, 0% 8%);
         }
@@ -198,10 +203,16 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 min-h-screen">
-        {/* Background gradient blobs */}
+      <section className="relative pt-32 pb-20 px-6 min-h-screen overflow-hidden">
+        {/* Background gradient blobs - multiple layers for depth */}
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-violet-600/20 rounded-full blur-3xl animate-pulse-glow" />
         <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1s' }} />
+
+        {/* Decorative circles */}
+        <div className="absolute top-40 right-10 w-32 h-32 border border-violet-500/10 rounded-full animate-float" />
+        <div className="absolute top-60 right-20 w-20 h-20 border border-blue-500/10 rounded-full animate-float" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute bottom-40 left-10 w-40 h-40 border border-purple-500/10 rounded-full animate-rotate-slow" />
 
         <div className="relative max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -329,9 +340,17 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="relative py-20 px-6">
+      <section id="projects" className="relative py-20 px-6 overflow-hidden">
         {/* Section background */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950" />
+
+        {/* Background decorative elements */}
+        <div className="absolute top-20 right-1/4 w-96 h-96 bg-violet-600/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-1/4 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl" />
+
+        {/* Floating geometric shapes */}
+        <div className="absolute top-1/4 left-10 w-24 h-24 border border-violet-500/10 rounded-lg animate-rotate-slow" />
+        <div className="absolute bottom-1/3 right-16 w-32 h-32 border border-blue-500/10 rounded-full animate-float" style={{ animationDelay: '1.5s' }} />
 
         <div className="relative max-w-6xl mx-auto">
           {/* Section Header */}
@@ -427,8 +446,16 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      <section id="contact" className="relative py-20 px-6 overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-10 left-1/3 w-64 h-64 bg-violet-600/10 rounded-full blur-3xl animate-pulse-glow" />
+        <div className="absolute bottom-10 right-1/3 w-48 h-48 bg-purple-600/10 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '2s' }} />
+
+        {/* Decorative shapes */}
+        <div className="absolute top-1/4 right-10 w-20 h-20 border border-violet-500/10 rounded-full animate-float" />
+        <div className="absolute bottom-1/4 left-10 w-28 h-28 border border-blue-500/10 rounded-lg animate-rotate-slow" />
+
+        <div className="relative max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
               {t.contactTitle}
