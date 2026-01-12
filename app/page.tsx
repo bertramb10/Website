@@ -6,40 +6,74 @@ import ResumeButtons from './components/ResumeButtons';
 
 export default function Home() {
   const [imageError, setImageError] = useState(false);
+  const [language, setLanguage] = useState<'da' | 'en'>('da');
 
   const skills = {
     languages: ['Python', 'JavaScript', 'TypeScript', 'C#', 'C++'],
     frontend: ['React', 'Next.js', 'Angular', 'HTML/CSS', 'Tailwind CSS'],
     backend: ['Node.js', 'MySQL', 'REST APIs', 'Git', 'Azure/DevOps'],
     methodology: ['Scrum', 'CI/CD'],
-    soft: ['Dialogorienteret', 'Rolig & afbalanceret', 'Ansvarsbevidst', 'God teamplayer']
+    soft: language === 'da'
+      ? ['Dialogorienteret', 'Rolig & afbalanceret', 'Ansvarsbevidst', 'God teamplayer']
+      : ['Communication-oriented', 'Calm & balanced', 'Responsible', 'Good team player']
+  };
+
+  const t = {
+    contact: language === 'da' ? 'Kontakt' : 'Contact',
+    experience: language === 'da' ? 'Experience' : 'Experience',
+    aboutMe: language === 'da' ? 'About Me' : 'About Me',
+    aboutText: language === 'da' ? {
+      p1: 'Jeg er en softwareudvikler med passion for at bygge moderne og brugervenlige applikationer.',
+      p2: 'Med erfaring i både frontend og backend, fokuserer jeg på at skabe løsninger der er både funktionelle og æstetiske.',
+      p3: 'Udover udvikling driver jeg ClearCraft, hvor jeg hjælper små virksomheder med professionelle hjemmesider.'
+    } : {
+      p1: 'I am a software developer with a passion for building modern and user-friendly applications.',
+      p2: 'With experience in both frontend and backend, I focus on creating solutions that are both functional and aesthetic.',
+      p3: 'Beyond development, I run ClearCraft, where I help small businesses with professional websites.'
+    },
+    projects: language === 'da' ? 'Projects' : 'Projects',
+    projectsSubtitle: language === 'da' ? 'Udvalgte projekter jeg har arbejdet på' : 'Selected projects I have worked on',
+    seeProject: language === 'da' ? 'Se projekt' : 'View project',
+    contactTitle: language === 'da' ? 'Kontakt' : 'Contact',
+    contactText: language === 'da'
+      ? 'Har du et projekt i tankerne eller vil du bare sige hej? Skriv endelig!'
+      : 'Have a project in mind or just want to say hi? Feel free to reach out!',
+    downloadCV: language === 'da' ? 'Download mit CV:' : 'Download my CV:'
   };
 
   const projects = [
     {
       title: 'ClearCraft',
-      description: 'Professionel webdesign service der leverer moderne, responsive hjemmesider til små og mellemstore virksomheder. Komplet med demo-templates og kundeportal.',
+      description: language === 'da'
+        ? 'Professionel webdesign service der leverer moderne, responsive hjemmesider til små og mellemstore virksomheder. Komplet med demo-templates og kundeportal.'
+        : 'Professional web design service delivering modern, responsive websites for small and medium-sized businesses. Complete with demo templates and client portal.',
       tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
       link: 'https://clearcraft-website.vercel.app',
       color: 'violet'
     },
     {
       title: 'Smart Job Post Finding System',
-      description: 'Intelligent job-søgnings og analyse værktøj der automatisk finder relevante stillinger, ekstraherer nøgleord og hjælper med at målrette ansøgninger.',
+      description: language === 'da'
+        ? 'Intelligent job-søgnings og analyse værktøj der automatisk finder relevante stillinger, ekstraherer nøgleord og hjælper med at målrette ansøgninger.'
+        : 'Intelligent job search and analysis tool that automatically finds relevant positions, extracts keywords, and helps target applications.',
       tags: ['Next.js', 'TypeScript', 'API Integration', 'Automation'],
       link: '/jobs',
       color: 'blue'
     },
     {
       title: 'Food/Drink Program',
-      description: 'Bæredygtig mad-tracking app der hjælper brugere med at forstå og reducere deres klimaaftryk gennem deres kostvalg og indkøbsvaner.',
+      description: language === 'da'
+        ? 'Bæredygtig mad-tracking app der hjælper brugere med at forstå og reducere deres klimaaftryk gennem deres kostvalg og indkøbsvaner.'
+        : 'Sustainable food tracking app that helps users understand and reduce their carbon footprint through their dietary choices and shopping habits.',
       tags: ['React', 'Node.js', 'Database', 'Analytics'],
       link: '#',
       color: 'emerald'
     },
     {
       title: 'Dota 2 Hero Picker',
-      description: 'Intelligent hero-anbefalingssystem der analyserer team-komposition og modstandernes picks for at foreslå optimale hero-valg baseret på synergier og counters.',
+      description: language === 'da'
+        ? 'Intelligent hero-anbefalingssystem der analyserer team-komposition og modstandernes picks for at foreslå optimale hero-valg baseret på synergier og counters.'
+        : 'Intelligent hero recommendation system that analyzes team composition and enemy picks to suggest optimal hero choices based on synergies and counters.',
       tags: ['Next.js', 'TypeScript', 'Algorithm', 'Game Analytics'],
       link: '/dota-picker',
       color: 'red'
@@ -102,13 +136,40 @@ export default function Home() {
               </div>
             </a>
 
-            {/* Contact Button */}
-            <a
-              href="#contact"
-              className="px-5 py-2 bg-slate-800 border border-slate-700 rounded-lg font-medium hover:bg-slate-700 hover:border-violet-500/50 transition-all"
-            >
-              Kontakt
-            </a>
+            {/* Language + Contact */}
+            <div className="flex items-center gap-4">
+              {/* Language Toggle */}
+              <div className="flex items-center gap-1 bg-slate-800 border border-slate-700 rounded-lg p-1">
+                <button
+                  onClick={() => setLanguage('da')}
+                  className={`px-3 py-1.5 rounded text-sm font-medium transition-all ${
+                    language === 'da'
+                      ? 'bg-violet-600 text-white'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  DA
+                </button>
+                <button
+                  onClick={() => setLanguage('en')}
+                  className={`px-3 py-1.5 rounded text-sm font-medium transition-all ${
+                    language === 'en'
+                      ? 'bg-violet-600 text-white'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  EN
+                </button>
+              </div>
+
+              {/* Contact Button */}
+              <a
+                href="#contact"
+                className="px-5 py-2 bg-slate-800 border border-slate-700 rounded-lg font-medium hover:bg-slate-700 hover:border-violet-500/50 transition-all"
+              >
+                {t.contact}
+              </a>
+            </div>
           </div>
         </div>
 
@@ -167,17 +228,11 @@ export default function Home() {
 
               {/* About Me */}
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold text-white">About Me</h2>
+                <h2 className="text-2xl font-bold text-white">{t.aboutMe}</h2>
                 <div className="space-y-3 text-slate-300 leading-relaxed" style={{ fontFamily: 'Georgia, Cambria, "Times New Roman", serif' }}>
-                  <p>
-                    Jeg er en softwareudvikler med passion for at bygge moderne og brugervenlige applikationer.
-                  </p>
-                  <p>
-                    Med erfaring i både frontend og backend, fokuserer jeg på at skabe løsninger der er både funktionelle og æstetiske.
-                  </p>
-                  <p>
-                    Udover udvikling driver jeg ClearCraft, hvor jeg hjælper små virksomheder med professionelle hjemmesider.
-                  </p>
+                  <p>{t.aboutText.p1}</p>
+                  <p>{t.aboutText.p2}</p>
+                  <p>{t.aboutText.p3}</p>
                 </div>
               </div>
             </div>
@@ -190,7 +245,7 @@ export default function Home() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 to-blue-600 rounded-full blur opacity-50" />
                   <div className="relative px-8 py-3 bg-slate-900 border border-violet-500/30 rounded-full">
                     <span className="text-lg font-semibold bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
-                      Experience
+                      {t.experience}
                     </span>
                   </div>
                 </div>
@@ -283,10 +338,10 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
-                Projects
+                {t.projects}
               </span>
             </h2>
-            <p className="text-slate-400 text-lg">Udvalgte projekter jeg har arbejdet på</p>
+            <p className="text-slate-400 text-lg">{t.projectsSubtitle}</p>
           </div>
 
           {/* Project Cards */}
@@ -359,7 +414,7 @@ export default function Home() {
                       'bg-emerald-600 hover:bg-emerald-700'
                     } text-white`}
                   >
-                    Se projekt
+                    {t.seeProject}
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -376,11 +431,11 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
-              Kontakt
+              {t.contactTitle}
             </span>
           </h2>
           <p className="text-lg text-slate-400 mb-8">
-            Har du et projekt i tankerne eller vil du bare sige hej? Skriv endelig!
+            {t.contactText}
           </p>
           <div className="flex gap-4 justify-center flex-wrap mb-8">
             <a
@@ -402,7 +457,7 @@ export default function Home() {
             <CopyEmailButton email="bertramb10@yahoo.dk" />
           </div>
           <div className="border-t border-slate-800 pt-8">
-            <p className="text-sm text-slate-500 mb-4">Download mit CV:</p>
+            <p className="text-sm text-slate-500 mb-4">{t.downloadCV}</p>
             <ResumeButtons />
           </div>
         </div>
