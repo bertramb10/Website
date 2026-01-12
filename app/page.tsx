@@ -205,14 +205,16 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 min-h-screen overflow-hidden">
         {/* Background gradient blobs - multiple layers for depth */}
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-violet-600/20 rounded-full blur-3xl animate-pulse-glow" />
-        <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-20 left-1/4 w-[500px] h-[500px] bg-violet-600/30 rounded-full blur-3xl animate-pulse-glow" />
+        <div className="absolute bottom-20 right-1/4 w-[450px] h-[450px] bg-blue-600/30 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/3 right-1/3 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-pink-600/15 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '3s' }} />
 
         {/* Decorative circles */}
-        <div className="absolute top-40 right-10 w-32 h-32 border border-violet-500/10 rounded-full animate-float" />
-        <div className="absolute top-60 right-20 w-20 h-20 border border-blue-500/10 rounded-full animate-float" style={{ animationDelay: '1.5s' }} />
-        <div className="absolute bottom-40 left-10 w-40 h-40 border border-purple-500/10 rounded-full animate-rotate-slow" />
+        <div className="absolute top-40 right-10 w-40 h-40 border-2 border-violet-500/20 rounded-full animate-float" />
+        <div className="absolute top-60 right-20 w-24 h-24 border-2 border-blue-500/25 rounded-full animate-float" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute bottom-40 left-10 w-48 h-48 border border-purple-500/20 rounded-full animate-rotate-slow" />
+        <div className="absolute top-1/4 left-1/3 w-32 h-32 border-2 border-violet-400/15 rounded-full animate-float" style={{ animationDelay: '2.5s' }} />
 
         <div className="relative max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -345,12 +347,14 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950" />
 
         {/* Background decorative elements */}
-        <div className="absolute top-20 right-1/4 w-96 h-96 bg-violet-600/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-1/4 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-1/4 w-[500px] h-[500px] bg-violet-600/20 rounded-full blur-3xl animate-pulse-glow" />
+        <div className="absolute bottom-20 left-1/4 w-[450px] h-[450px] bg-blue-600/20 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1s' }} />
 
         {/* Floating geometric shapes */}
-        <div className="absolute top-1/4 left-10 w-24 h-24 border border-violet-500/10 rounded-lg animate-rotate-slow" />
-        <div className="absolute bottom-1/3 right-16 w-32 h-32 border border-blue-500/10 rounded-full animate-float" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute top-1/4 left-10 w-32 h-32 border-2 border-violet-500/25 rounded-lg animate-rotate-slow" />
+        <div className="absolute bottom-1/3 right-16 w-40 h-40 border-2 border-blue-500/20 rounded-full animate-float" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute top-2/3 left-1/3 w-28 h-28 border-2 border-purple-500/20 rounded-lg rotate-45 animate-float" style={{ animationDelay: '2.5s' }} />
 
         <div className="relative max-w-6xl mx-auto">
           {/* Section Header */}
@@ -448,12 +452,14 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="relative py-20 px-6 overflow-hidden">
         {/* Background decorative elements */}
-        <div className="absolute top-10 left-1/3 w-64 h-64 bg-violet-600/10 rounded-full blur-3xl animate-pulse-glow" />
-        <div className="absolute bottom-10 right-1/3 w-48 h-48 bg-purple-600/10 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-10 left-1/3 w-96 h-96 bg-violet-600/25 rounded-full blur-3xl animate-pulse-glow" />
+        <div className="absolute bottom-10 right-1/3 w-80 h-80 bg-purple-600/20 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 right-1/2 w-72 h-72 bg-blue-600/15 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1s' }} />
 
         {/* Decorative shapes */}
-        <div className="absolute top-1/4 right-10 w-20 h-20 border border-violet-500/10 rounded-full animate-float" />
-        <div className="absolute bottom-1/4 left-10 w-28 h-28 border border-blue-500/10 rounded-lg animate-rotate-slow" />
+        <div className="absolute top-1/4 right-10 w-28 h-28 border-2 border-violet-500/25 rounded-full animate-float" />
+        <div className="absolute bottom-1/4 left-10 w-36 h-36 border-2 border-blue-500/20 rounded-lg animate-rotate-slow" />
+        <div className="absolute top-1/3 left-1/4 w-24 h-24 border-2 border-purple-500/20 rounded-full animate-float" style={{ animationDelay: '2s' }} />
 
         <div className="relative max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
