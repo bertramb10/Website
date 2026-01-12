@@ -100,10 +100,16 @@ export default function Home() {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
         }
+        @keyframes float-vertical {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          33% { transform: translateY(-30px) rotate(5deg); }
+          66% { transform: translateY(30px) rotate(-5deg); }
+        }
         .animate-float { animation: float 6s ease-in-out infinite; }
         .animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
         .animate-wave { animation: wave 20s linear infinite; }
         .animate-rotate-slow { animation: rotate-slow 30s linear infinite; }
+        .animate-float-vertical { animation: float-vertical 8s ease-in-out infinite; }
         .project-card {
           clip-path: polygon(15% 0%, 85% 0%, 100% 8%, 100% 100%, 0% 100%, 0% 8%);
         }
@@ -219,7 +225,22 @@ export default function Home() {
         <div className="relative max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Side - Image + About */}
-            <div className="space-y-8">
+            <div className="relative space-y-8">
+              {/* Floating shapes column on the left */}
+              <div className="absolute -left-20 top-0 bottom-0 w-16 hidden lg:block">
+                {/* Circle 1 */}
+                <div className="absolute top-[10%] w-12 h-12 border-2 border-violet-500/30 rounded-full animate-float-vertical" />
+                {/* Square 1 */}
+                <div className="absolute top-[25%] w-10 h-10 border-2 border-blue-500/25 rounded-lg animate-float-vertical" style={{ animationDelay: '1s' }} />
+                {/* Circle 2 */}
+                <div className="absolute top-[45%] w-14 h-14 border-2 border-purple-500/30 rounded-full animate-float-vertical" style={{ animationDelay: '2s' }} />
+                {/* Triangle-like rotated square */}
+                <div className="absolute top-[60%] w-11 h-11 border-2 border-violet-400/25 rounded-lg rotate-45 animate-float-vertical" style={{ animationDelay: '3s' }} />
+                {/* Circle 3 */}
+                <div className="absolute top-[80%] w-13 h-13 border-2 border-blue-400/30 rounded-full animate-float-vertical" style={{ animationDelay: '1.5s' }} />
+                {/* Small square */}
+                <div className="absolute top-[95%] w-8 h-8 border-2 border-purple-400/25 rounded-lg animate-float-vertical" style={{ animationDelay: '2.5s' }} />
+              </div>
               {/* Profile Image */}
               <div className="relative">
                 <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 to-blue-600 rounded-2xl blur opacity-30" />
