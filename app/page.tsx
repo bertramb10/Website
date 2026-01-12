@@ -9,8 +9,10 @@ export default function Home() {
 
   const skills = {
     languages: ['Python', 'JavaScript', 'TypeScript', 'C#', 'C++'],
-    frontend: ['React', 'Next.js', 'HTML/CSS', 'Tailwind CSS'],
-    backend: ['Node.js', 'REST APIs', 'Git', 'Azure']
+    frontend: ['React', 'Next.js', 'Angular', 'HTML/CSS', 'Tailwind CSS'],
+    backend: ['Node.js', 'MySQL', 'REST APIs', 'Git', 'Azure/DevOps'],
+    methodology: ['Scrum', 'CI/CD'],
+    soft: ['Dialogorienteret', 'Rolig & afbalanceret', 'Ansvarsbevidst', 'God teamplayer']
   };
 
   const projects = [
@@ -166,7 +168,7 @@ export default function Home() {
               {/* About Me */}
               <div className="space-y-4">
                 <h2 className="text-2xl font-bold text-white">About Me</h2>
-                <div className="space-y-3 text-slate-300 leading-relaxed">
+                <div className="space-y-3 text-slate-300 leading-relaxed" style={{ fontFamily: 'Georgia, Cambria, "Times New Roman", serif' }}>
                   <p>
                     Jeg er en softwareudvikler med passion for at bygge moderne og brugervenlige applikationer.
                   </p>
@@ -195,40 +197,69 @@ export default function Home() {
               </div>
 
               {/* Skills Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* Languages */}
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-violet-400">Languages</h3>
-                  <div className="space-y-2">
-                    {skills.languages.map((skill) => (
-                      <div key={skill} className="skill-badge px-4 py-2 rounded-lg text-slate-300 text-sm">
-                        {skill}
-                      </div>
-                    ))}
+              <div className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {/* Languages */}
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-violet-400">Languages</h3>
+                    <div className="space-y-2">
+                      {skills.languages.map((skill) => (
+                        <div key={skill} className="skill-badge px-4 py-2 rounded-lg text-slate-300 text-sm">
+                          {skill}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Frontend */}
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-blue-400">Frontend</h3>
+                    <div className="space-y-2">
+                      {skills.frontend.map((skill) => (
+                        <div key={skill} className="skill-badge px-4 py-2 rounded-lg text-slate-300 text-sm">
+                          {skill}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Backend and Tools */}
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-indigo-400">Backend & Tools</h3>
+                    <div className="space-y-2">
+                      {skills.backend.map((skill) => (
+                        <div key={skill} className="skill-badge px-4 py-2 rounded-lg text-slate-300 text-sm">
+                          {skill}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-                {/* Frontend */}
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-blue-400">Frontend</h3>
-                  <div className="space-y-2">
-                    {skills.frontend.map((skill) => (
-                      <div key={skill} className="skill-badge px-4 py-2 rounded-lg text-slate-300 text-sm">
-                        {skill}
-                      </div>
-                    ))}
+                {/* Second row - Methodology & Soft Skills */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Methodology */}
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-cyan-400">Methodology</h3>
+                    <div className="space-y-2">
+                      {skills.methodology.map((skill) => (
+                        <div key={skill} className="skill-badge px-4 py-2 rounded-lg text-slate-300 text-sm">
+                          {skill}
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
 
-                {/* Backend and Tools */}
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-indigo-400">Backend & Tools</h3>
-                  <div className="space-y-2">
-                    {skills.backend.map((skill) => (
-                      <div key={skill} className="skill-badge px-4 py-2 rounded-lg text-slate-300 text-sm">
-                        {skill}
-                      </div>
-                    ))}
+                  {/* Soft Skills */}
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-emerald-400">Soft Skills</h3>
+                    <div className="space-y-2">
+                      {skills.soft.map((skill) => (
+                        <div key={skill} className="skill-badge px-4 py-2 rounded-lg text-slate-300 text-sm">
+                          {skill}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
